@@ -19,6 +19,8 @@ Type=simple
 ExecStart= /usr/bin/docker run --rm -i --hostname ${bastion_host_name}_%i -v /dev/log:/dev/log -v /opt/iam_helper:/opt:ro sshd_worker
 StandardInput=socket
 RuntimeMaxSec=43200
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
