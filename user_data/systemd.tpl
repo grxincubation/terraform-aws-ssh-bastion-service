@@ -10,12 +10,12 @@ Accept=true
 [Install]
 WantedBy=sockets.target
 EOF
-cat << EOF > /etc/systemd/system/sshd_worker@.service
+cat << EOF > /etc/systemd/system/sshd_worker.service
 [Unit]
 Description=SSH Per-Connection docker ssh container
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart= /usr/bin/docker run --rm -i --hostname ${bastion_host_name}_%i -v /dev/log:/dev/log -v /opt/iam_helper:/opt:ro sshd_worker
 StandardInput=socket
 
