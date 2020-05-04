@@ -24,6 +24,7 @@ done
 
 ) > /dev/null 2>&1
 
-/usr/sbin/sshd -i
+# always exit 0 because docker exits 255 and will eventually crash the host
+/usr/sbin/sshd -i; exit 0;
 EOF
 chmod 0700 /opt/iam_helper/ssh_populate.sh
