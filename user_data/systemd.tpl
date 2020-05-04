@@ -10,7 +10,7 @@ Accept=true
 [Install]
 WantedBy=sockets.target
 EOF
-cat << EOF > /etc/systemd/system/sshd_worker.service
+cat << EOF > /etc/systemd/system/sshd_worker@.service
 [Unit]
 Description=SSH Per-Connection docker ssh container
 
