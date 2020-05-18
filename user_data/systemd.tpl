@@ -4,7 +4,7 @@ cat << EOF > /etc/systemd/system/sshd_worker.socket
 Description=SSH Socket for Per-Connection docker ssh container
 
 [Socket]
-ListenStream=8522
+ListenStream=22
 Accept=true
 
 [Install]

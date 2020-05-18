@@ -12,9 +12,8 @@ cat << EOF > /opt/sshd_worker/Dockerfile
 FROM ubuntu:${container_ubuntu_version}
 
 RUN apt-get update && apt-get install -y openssh-server sudo awscli && echo '\033[1;31mI am a one-time Ubuntu container with passwordless sudo. \033[1;37;41mI will terminate after 12 hours or else on exit\033[0m' > /etc/motd && mkdir /var/run/sshd
-RUN sed -i 's/Port[[:blank:]]22/Port\ 8522/'  /etc/ssh/sshd_config
 
-EXPOSE 8522
+EXPOSE 22
 CMD ["/opt/ssh_populate.sh"]
 EOF
 #Build sshd service container
