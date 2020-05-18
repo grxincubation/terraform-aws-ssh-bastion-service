@@ -12,7 +12,7 @@ resource "aws_lb" "bastion-service" {
 }
 
 ######################################################
-# Listener- Port 8522 -service only
+# Listener- Port 22 -service only
 ######################################################
 
 resource "aws_lb_listener" "bastion-service" {

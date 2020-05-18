@@ -71,5 +71,5 @@ locals {
 # load balancer ssh listener port
 #########################
 locals {
-  lb_service_ssh_port = var.lb_service_ssh_port == "" ? "8522" : var.lb_service_ssh_port
+  lb_service_ssh_port = var.lb_service_ssh_port == "" ? "22" : var.lb_service_ssh_port
 }
