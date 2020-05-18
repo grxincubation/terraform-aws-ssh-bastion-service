@@ -18,7 +18,7 @@ resource "aws_lb" "bastion-service" {
 resource "aws_lb_listener" "bastion-service" {
   load_balancer_arn = aws_lb.bastion-service.arn
   protocol          = "TCP"
-  port              = "22"
+  port              = local.lb_service_ssh_port
 
   default_action {
     target_group_arn = aws_lb_target_group.bastion-service.arn

@@ -145,6 +145,11 @@ variable "container_ubuntu_version" {
   default     = "16.04"
 }
 
+variable "lb_service_ssh_port" {
+  description = "the port that the load balancer is listening on for the docker ssh container"
+  default     = "22"
+}
+
 variable "extra_user_data_content" {
   default     = ""
   description = "Extra user-data to add to the default built-in"

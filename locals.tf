@@ -66,3 +66,10 @@ locals {
   route53_name_components = "${local.bastion_host_name}-${var.service_name}.${var.dns_domain}"
 }
 
+
+#########################
+# load balancer ssh listener port
+#########################
+locals {
+  lb_service_ssh_port = var.lb_service_ssh_port == "" ? "22" : var.lb_service_ssh_port
+}
