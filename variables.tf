@@ -15,6 +15,12 @@ variable "cidr_blocks_whitelist_service" {
   default     = []
 }
 
+variable "cidr_blocks_whitelist_service_description" {
+  description = "description for the range(s) of incoming IP addresses to whitelist for the SERVICE"
+  type        = list(string)
+  default     = []
+}
+
 variable "environment_name" {
   description = "the name of the environment that we are deploying to, used in tagging. Overwritten if var.service_name and var.bastion_host_name values are changed"
   default     = "staging"
